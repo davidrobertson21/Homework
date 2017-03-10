@@ -7,7 +7,7 @@ def total_cash(pet_shop)
 end
 
 def add_or_remove_cash(pet_shop, cash)
-  pet_shop[:admin][:total_cash] += cash
+  pet_shop[:admin][:total_cash] += cash #USE += TO ADD INTEGERS TO A HASH
 end
 
 def pets_sold(pet_shop)
@@ -55,5 +55,15 @@ def remove_pet_by_name(pet_shop, pet_name)
 end
 
 def add_pet_to_stock(pet_shop, new_pet)
-  pet_shop[:pets] << new_pet
+  pet_shop[:pets] << new_pet #USE SHOVEL TO ADD INTO AN ARRAY
 end
+
+def customer_pet_count(customer)
+customer[:pets].length
+end
+
+def add_pet_to_customer(customer, new_pet)
+  customer[:pets] << new_pet
+  return 
+end
+
