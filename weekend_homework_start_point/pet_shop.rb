@@ -32,3 +32,28 @@ def pets_by_breed(pet_shop, breed)
   end
   return pets_by_breed
 end
+
+def find_pet_by_name(pet_shop, pet_name)
+  pets = pet_shop[:pets]
+  for pet in pets
+    if pet_name == pet[:name]
+      return pet
+    end
+  end
+      return nil #THIS RETURNS NIL IF THE FUNCTION LOOPS THE HASH AND DOESN'T FIND ANY PET WITH THE pet_name PASSED INTO THE FUNCTION. NEEDS TO BE OUT OF THE FOR LOOP
+end    
+
+
+def remove_pet_by_name(pet_shop, pet_name)
+  pets = pet_shop[:pets]
+  for pet in pets
+    if pet_name == pet[:name]
+     pet_shop[:pets].delete(pet)
+    end
+  end
+      return nil #THIS RETURNS NIL IF THE FUNCTION LOOPS THE HASH AND DOESN'T FIND ANY PET WITH THE pet_name PASSED INTO THE FUNCTION. NEEDS TO BE OUT OF THE FOR LOOP
+end
+
+def add_pet_to_stock(pet_shop, new_pet)
+  pet_shop[:pets] << new_pet
+end
