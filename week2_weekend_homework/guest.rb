@@ -19,9 +19,14 @@ class Guest
     return @guest.age
   end
 
-  def get_guest_moeney
+  def get_guest_money
     return @guest.money
   end
+
+  def pay_money
+    ls
+
+
 
 
 
