@@ -16,8 +16,8 @@ class Room
 
 
   def add_guest_to_room(guest)
-    # return if @guest.money < @room.entry_fee
-    # @guest.pay_money(@room.entry_fee)
+    return if guest.money < @entry_fee
+    guest.pay_money(@entry_fee)
     @room_guests << guest
     # end
   end
@@ -50,9 +50,9 @@ class Room
   end
 
 
-  def entry_fee
-    return @room.entry_fee
-  end
+  # def entry_fee
+  #   return @entry_fee
+  # end
 
 
 

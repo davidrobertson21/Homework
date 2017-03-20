@@ -17,17 +17,17 @@ class Guest
   end
 
 
-  def get_guest_age
-    return @guest.age
-  end
+  # def get_guest_age
+  #   return @guest.age
+  # end
 
-  def get_guest_money
-    return @guest.money
-  end
+  # def get_guest_money
+  #   return @guest.money
+  # end
 
   def pay_money(cost)
-    new_balance = @guest.money - cost
-    return new_balance
+    @money -= cost
+    return @money
   end
 
 
