@@ -33,7 +33,7 @@ def setup
   @randb_songs = [@song2, @song5]
 
 
-  @pop_room = Room.new("Pop", @pop_songs, 3, 35)
+  @pop_room = Room.new("Pop", @pop_songs, 3, 10)
   @randb_room = Room.new("R&B", @randb_songs, 3, 40)
   @rock_room = Room.new("Rock", @song3, 3, 45)
   @dance_room = Room.new("Dance", @song4, 3, 25)
@@ -73,15 +73,19 @@ def test_add_song_to_room
   assert_equal(3, @pop_room.song_playlist.length)
 end
 
+def test_entry_fee
+  assert_equal(10, @pop_room.entry_fee)
+end
+
 def test_check_if_guest_is_in_room
   @pop_room.add_guest_to_room(@guest1)
    
    assert_equal(true, @pop_room.check_if_guest_is_in_room(@guest1))
 end
 
+
 # def test_check_capacity
 #   @pop_room.add_guest_to_room(@guest2)
-#   @pop_room.check_capacity()
 #   assert_equal(1, pop_room.room_guests.length)
 # end
 

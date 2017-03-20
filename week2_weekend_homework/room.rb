@@ -3,7 +3,7 @@ require_relative('guest')
 
 class Room
 
-  attr_reader :room_type, :room_guests, :song_playlist, :capacity, :room_cost
+  attr_reader :room_type, :room_guests, :song_playlist, :capacity, :room_cost, :entry_fee
 
   def initialize(room_type, song_playlist, capacity, entry_fee)
     @room_type = room_type
@@ -16,8 +16,8 @@ class Room
 
 
   def add_guest_to_room(guest)
-    # return if guest.money < @room.entry_fee
-    # guest.pay_money(room.entry_fee)
+    # return if @guest.money < @room.entry_fee
+    # @guest.pay_money(@room.entry_fee)
     @room_guests << guest
     # end
   end
@@ -36,8 +36,6 @@ class Room
       else
         return false
       end
-
-      # @room_guests.include? guest_to_check ? true : false    
     end
 
   
@@ -46,9 +44,16 @@ class Room
     @room_guests.delete(guest_to_remove)
   end
   
+
   def add_song_to_room(song)
     @song_playlist << song
   end
+
+
+  def entry_fee
+    return @room.entry_fee
+  end
+
 
 
 end

@@ -1,3 +1,5 @@
+require_relative('room')
+
 class Guest
 
   attr_reader :name, :age, :favourite_genre, :money
@@ -23,8 +25,10 @@ class Guest
     return @guest.money
   end
 
-  def pay_money
-    ls
+  def pay_money(cost)
+    new_balance = @guest.money - cost
+    return new_balance
+  end
 
 
 

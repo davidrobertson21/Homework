@@ -1,6 +1,8 @@
 require("minitest/autorun")
 require("minitest/rg")
 require_relative("../guest")
+require_relative("../room")
+
 
 
 class TestGuest < MiniTest::Test
@@ -24,6 +26,12 @@ end
 
 def test_get_money
   assert_equal(35, @new_guest.money)
+end
+
+def test_pay_money
+  @new_guest.pay_money(10)
+  assert_equal(25, @new_guest.money)
+end
 
 
 end
