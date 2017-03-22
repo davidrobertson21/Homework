@@ -28,4 +28,12 @@ attr_reader :id
   end
 
 
+  def all_albums_by_artist()
+    sql = "SELECT * FROM albums WHERE artist_id = #{@id}"
+    result = SqlRunner.run(sql)
+    albums = result.map {|album| Album.new(album)}
+    return albums
+  end
+
+
 end

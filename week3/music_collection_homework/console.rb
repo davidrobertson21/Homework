@@ -16,7 +16,7 @@ album1 = Album.new({"artist_id" => artist1.id,
                          "title" => "pop album",
                          "genre" => "pop"})
 album2 = Album.new({"artist_id" => artist2.id,
-                         "title" => "Ham & rock album",
+                         "title" => "rock album",
                          "genre" => "rock"})
 
 album1.save()
