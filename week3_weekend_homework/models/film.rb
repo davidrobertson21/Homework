@@ -27,7 +27,13 @@ class Film
     sql = "DELETE FROM films WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
-  
+
+  def customers()
+    sql = "SELECT customers.* FROM customers INNER JOIN tickets ON tickets.customer_id = customers.id WHERE tickets.film_id = #{@id}"
+    customers = Customer.map_items(sql)
+    return customers
+  end
+
 
   def self.show_all()
     sql = "SELECT * FROM films"

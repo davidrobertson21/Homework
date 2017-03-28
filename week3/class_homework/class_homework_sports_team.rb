@@ -6,7 +6,7 @@ class SportsTeam
     @team_name = input_team_name
     @players = input_players
     @coach_name = input_coach
-    @points = input_points
+    @points = 0
   end
 
 
@@ -42,8 +42,8 @@ def find_player(player_name)
 end
 
 def win_or_loss(result)
-  if result == "Win"
-    @points += 1
+  if result.downcase == "Win"
+    @points += 3
   end
 end
 

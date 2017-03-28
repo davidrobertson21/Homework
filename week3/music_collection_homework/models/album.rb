@@ -25,6 +25,35 @@ attr_reader :id, :artist_id
      @id = result.first["id"].to_i
   end
 
+  def delete()
+    sql = "DELETE FROM albums WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
+
+  def update()
+    sql = "UPDATE albums SET (title,
+                              genre,
+                              artist_id) =
+                                    ('#{@title}',
+                                      #{@genre},
+                                      #{@artist_id})
+                                      WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
+
+
+  def what_artists_album()
+    sql = "SELECT * FROM albums WHERE id = #{@artist_id}"
+    result = SqlRunner.run(sql).first
+    return Artist.new(result)
+  end
+
+
+  def self.delete_all()
+    sql = "DELETE FROM albums"
+    SqlRunner.run(sql)
+  end
+
 
   def self.all()
     sql = "SELECT * FROM albums"
@@ -32,11 +61,5 @@ attr_reader :id, :artist_id
     return result.map{|album| Album.new(album)}
   end
 
-
-  def what_artists_album()
-    sql = "SELECT * FROM albums WHERE artist_id = #{@artist_id}"
-    result = SqlRunner.run(sql).first
-    return Artist.new(result)
-  end
 
 end
