@@ -2,28 +2,24 @@ import static org.junit.Assert.*;
 import org.junit.*;
 
 public class PhotographerTest{
-  Camera camera;
-
+  DigitalCamera digitalCamera;
+  AnalogCamera analogCamera;
 
   @Before 
-  public void before() {
-    camera = new Camera;
+  public void before(){
+    photographer = new Photographer("David");
+    digitalCamera = new DigitalCamera();
+    analogCamera = new AnalogCamera();
+
   }
 
 
   @Test
   public void cameraListStartsEmpty(){
-    assertEquals(0, camera.cameraCount());
-  }
-
-  @Test
-  public void canAddCamera(){
-    bear.eat(salmon);
-    assertEquals(1, bear.foodCount());
-  }
+    assertEquals(0, photographer.cameraCount());
+  
 
 }
-
 
 
 
