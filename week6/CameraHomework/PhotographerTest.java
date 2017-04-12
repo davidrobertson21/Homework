@@ -22,10 +22,17 @@ public class PhotographerTest{
 
   @Test
   public void addCamera(){
-  photographer.add(digitalCamera);
+  photographer.addCamera(digitalCamera);
   assertEquals(1, photographer.cameraCount());
   }
-  
+
+  @Test
+  public void canRemoveCamera(){
+    photographer.addCamera(digitalCamera);
+    photographer.removeCamera();
+    assertEquals(0, photographer.cameraCount());
+  }
+
 }
 
 
