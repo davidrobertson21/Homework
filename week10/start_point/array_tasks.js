@@ -29,6 +29,12 @@ var arrayTasks = {
 		return newArray;
 	},
 
+	square: function(arr) {
+		return arr.map(function(number){
+			return number * number
+		});
+	},
+
 	sum: function (arr) {
 		var sum = 0
 		for (var item of arr){
@@ -37,10 +43,19 @@ var arrayTasks = {
 		return sum;
 	},
 
-	// findDuplicates: function (arr) {
-	// 	var nonDuplicateArray = [];
-	// 	var newArray = arr.slice().sort();
-	// },
+	sum: function(arr){
+		return arr.reduce(function(total, number){
+			return total + number;
+		})
+	},
+	
+	findDuplicates: function (arr) {
+		return arr.filter(function(item, i){
+			var restOfArrayIncludesItem = arr.slice(i + 1).includes(item)
+			var isFirstInstanceofItem = arr.indexOf(item) === i
+		return restOfArrayIncludesItem && isFirstInstanceofItem
+		})
+	},
 
 	removeAndClone: function (arr, valueToRemove) {
 		newArray = [];
@@ -51,16 +66,30 @@ var arrayTasks = {
 		}
 	},
 
-	// findIndexesOf: function (arr, itemToFind) {
-		
-	// },
+	removeAndClone: function(arr, valueToRemove) {
+		return arr.filter(function(item){
+			return item !== valueToRemove
+		})
+	},
+
+	findIndexesOf: function (arr, itemToFind) {
+		var results = [];
+		arr.forEach(function(item, index){
+			if (item === itemToFind){
+				results.push(index)
+			}
+		})
+		results
+	},
 
 	sumOfAllEvenNumbersSquared: function (arr) {
-		var counter = 0;
-		var evenArray = [];
-
-		
-	}
+		return arr.reduce(function(total, number){
+			if(number % 2 === 0){
+				return total + Math.pow(number, 2)
+			}
+			return total
+		}, 0)
+	},
 
 }
 
