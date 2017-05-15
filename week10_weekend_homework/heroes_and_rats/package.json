@@ -1,0 +1,11 @@
+{
+  "name": "heroes_and_rats",
+  "version": "1.0.0",
+  "main": "food.js",
+  "scripts": {
+    "test": "mocha specs"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
