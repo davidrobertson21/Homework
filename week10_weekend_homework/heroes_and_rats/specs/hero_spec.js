@@ -38,12 +38,12 @@ describe("Hero", function(){
 
   it("hero health should rise by 1.5", function(){
     this.hero.eat(this.food1)
-    assert.equal(130, this.hero.health;
+    assert.equal(130, this.hero.health);
   })
 
   it("should have no tasks", function(){
       assert.equal(0, this.hero1.tasks.length);
-  });
+  })
 
 
   it("hero should add task", function(){

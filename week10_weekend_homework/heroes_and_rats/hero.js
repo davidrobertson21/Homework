@@ -21,17 +21,23 @@ Hero.prototype ={
       this.tasks.push(task);
     },
 
-    sortTaskByUrgency: function(){
-      this.tasks.sort(function(a, b){
-        return a.urgency - b.urgency;
-      })
-    },
+    sortByDifficulty: function(){
+      this.tasks.sort(function(task1, task2){
+        return task1.difficulty - task2.difficulty;})
+      return this.tasks.reverse();
+      },
 
-    sortTaskByReward: function(){
-      this.tasks.sort(function(a, b){
-        return a.reward - b.reward;
-      })
-    },
+    sortByUrgency: function(){
+      this.tasks.sort(function(task1, task2){
+        return task1.urgency - task2.urgency;})
+      return this.tasks.reverse();
+      },
+
+    sortByReward: function(){
+      this.tasks.sort(function(task1, task2){
+        return task1.reward - task2.reward;})
+      return this.tasks.reverse();
+      },
 
 
 
