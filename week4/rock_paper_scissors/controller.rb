@@ -7,6 +7,7 @@ get "/" do
   erb (:home)
 end
 
+
 get "/game/:option1/:option2" do
   rockpaperscissors = RockPaperScissors.new(params[:option1], params[:option2])
   @rockpaperscissors = rockpaperscissors.game()

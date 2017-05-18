@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Created by user on 17/04/2017.
  */
 
-public class Ranking {
+public class  Ranking {
     private Movie[] movies;
 
     public Ranking() {
