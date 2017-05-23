@@ -33,4 +33,4 @@ var Films = function(){
   return [film1, film2];
 }
 
-module.exports = filmRouter;
+module.exports = Films;
